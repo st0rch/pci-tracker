@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PCIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AMVersionInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AMEngineVersion" Type="varchar" MaxLength="50" />
+          <Property Name="AMProductVersion" Type="varchar" MaxLength="50" />
+          <Property Name="active" Type="int" />
+        </EntityType>
+        <EntityType Name="PCIData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hostname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AMStatus" Type="bit" Nullable="false" />
+          <Property Name="BLStatus" Type="bit" Nullable="false" />
+          <Property Name="FirewallRullStatus" Type="bit" Nullable="false" />
+          <Property Name="FirewallContentStatus" Type="bit" Nullable="false" />
+          <Property Name="SCCMStatus" Type="bit" Nullable="false" />
+          <Property Name="MSBaselineStatus" Type="bit" Nullable="false" />
+          <Property Name="UpdatedDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PCIModelStoreContainer">
+          <EntitySet Name="AMVersionInfo" EntityType="Self.AMVersionInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PCIData" EntityType="Self.PCIData" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PCIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PCIData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hostname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AMStatus" Type="Boolean" Nullable="false" />
+          <Property Name="BLStatus" Type="Boolean" Nullable="false" />
+          <Property Name="FirewallRullStatus" Type="Boolean" Nullable="false" />
+          <Property Name="FirewallContentStatus" Type="Boolean" Nullable="false" />
+          <Property Name="SCCMStatus" Type="Boolean" Nullable="false" />
+          <Property Name="MSBaselineStatus" Type="Boolean" Nullable="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="PCIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PCIDatas" EntityType="Self.PCIData" />
+          <EntitySet Name="AMVersionInfoes" EntityType="PCIModel.AMVersionInfo" />
+        </EntityContainer>
+        <EntityType Name="AMVersionInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AMEngineVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AMProductVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PCIModelStoreContainer" CdmEntityContainer="PCIEntities">
+          <EntitySetMapping Name="PCIDatas">
+            <EntityTypeMapping TypeName="PCIModel.PCIData">
+              <MappingFragment StoreEntitySet="PCIData">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="hostname" ColumnName="hostname" />
+                <ScalarProperty Name="AMStatus" ColumnName="AMStatus" />
+                <ScalarProperty Name="BLStatus" ColumnName="BLStatus" />
+                <ScalarProperty Name="FirewallRullStatus" ColumnName="FirewallRullStatus" />
+                <ScalarProperty Name="FirewallContentStatus" ColumnName="FirewallContentStatus" />
+                <ScalarProperty Name="SCCMStatus" ColumnName="SCCMStatus" />
+                <ScalarProperty Name="MSBaselineStatus" ColumnName="MSBaselineStatus" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AMVersionInfoes">
+            <EntityTypeMapping TypeName="PCIModel.AMVersionInfo">
+              <MappingFragment StoreEntitySet="AMVersionInfo">
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="AMProductVersion" ColumnName="AMProductVersion" />
+                <ScalarProperty Name="AMEngineVersion" ColumnName="AMEngineVersion" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
