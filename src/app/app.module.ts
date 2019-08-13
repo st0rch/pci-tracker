@@ -5,6 +5,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SystemStatusComponent } from './system-status/system-status.component';
 import { SystemComponent } from './system/system.component';
+import { HttpClientModule} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import 'rxjs/Rx';
+import { PciService } from './Shared/pciservice';
+import {PopupModule} from 'ng2-opd-popup';
+import { SystembuttonComponent } from './systembutton/systembutton.component';
 
 @NgModule({
   declarations: [
@@ -12,12 +18,16 @@ import { SystemComponent } from './system/system.component';
     NavbarComponent,
     SidebarComponent,
     SystemStatusComponent,
-    SystemComponent
+    SystemComponent,
+    SystembuttonComponent
   ],
   imports: [
-    BrowserModule
+    HttpModule,
+    HttpClientModule,
+    BrowserModule,
+    PopupModule.forRoot(),
   ],
-  providers: [],
+  providers: [PciService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
