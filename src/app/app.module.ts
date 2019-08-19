@@ -10,7 +10,6 @@ import { HttpModule } from '@angular/http';
 import 'rxjs/Rx';
 import { PciService } from './Shared/pciservice';
 import {PopupModule} from 'ng2-opd-popup';
-import { SystembuttonComponent } from './systembutton/systembutton.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { SystembuttonComponent } from './systembutton/systembutton.component';
     SidebarComponent,
     SystemStatusComponent,
     SystemComponent,
-    SystembuttonComponent
   ],
   imports: [
     HttpModule,

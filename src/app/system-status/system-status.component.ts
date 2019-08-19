@@ -4,19 +4,15 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Ipcidata } from '../Shared/Ipcidata';
 import { map, filter, switchMap } from 'rxjs/operators';
-import { SystembuttonComponent } from '../systembutton/systembutton.component';
+
 
 
 const SAMPLE_SYSTEMS = [
-  {id: 1, machineName: 'DP1-304-044', isInCompliance: false},
-  {id: 2, machineName: 'DP1-304-044', isInCompliance: true},
-  {id: 3, machineName: 'DP1-304-044', isInCompliance: true},
-  {id: 4, machineName: 'DP1-304-044', isInCompliance: true},
-  {id: 1, machineName: 'DP1-304-044', isInCompliance: true},
-  {id: 2, machineName: 'DP1-304-044', isInCompliance: false},
-  {id: 3, machineName: 'DP1-304-044', isInCompliance: true},
-  {id: 4, machineName: 'DP1-304-044', isInCompliance: true},
-  {id: 1, machineName: 'DP1-304-044', isInCompliance: true},
+  {id: 1, machineName: 'DP1-304-044', isInCompliance: false, lastUpdated: '6/7/2017'},
+  {id: 2, machineName: 'DP1-304-044', isInCompliance: true, lastUpdated: '6/7/2017'},
+  {id: 3, machineName: 'DP1-304-044', isInCompliance: true, lastUpdated: '6/7/2017'},
+  {id: 4, machineName: 'DP1-304-044', isInCompliance: true, lastUpdated: '6/7/2017'},
+
 ];
 
 @Component({

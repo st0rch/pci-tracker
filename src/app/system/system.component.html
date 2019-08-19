@@ -1,5 +1,6 @@
-<div class="card mb-3 shadow block-status"[ngStyle]="{'background-color': color}">
-  <div class="card-header name">
-      <app-systembutton></app-systembutton>
+<div class="card mb-3 shadow button-background ">
+  <div class= "popup-box ">
+    <popup #popup> Last Full Scan: {{systemInput?.lastUpdated}} </popup>
   </div>
+  <button (click)="ClickButton()" class="btn btn-default button">{{systemInput?.machineName}}</button>
 </div>

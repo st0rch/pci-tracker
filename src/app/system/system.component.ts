@@ -1,7 +1,10 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { System } from '../Shared/system';
 import { Ipcidata } from '../Shared/iPCIDATA';
 import { PciService } from '../Shared/pciservice';
+import {Popup} from 'ng2-opd-popup';
+import { bindCallback } from 'rxjs';
+
 
 @Component({
   selector: 'app-system',
@@ -9,18 +12,28 @@ import { PciService } from '../Shared/pciservice';
   styleUrls: ['./system.component.css']
 })
 export class SystemComponent implements OnInit {
-
+  
   pciData: Ipcidata[];
+
 
   constructor(
 
-    private _pciService:PciService) { }
+    private _pciService:PciService
+    ) { }
 
   color: string;
   buttonText: string; 
 
   @Input() systemInput: System;
+  @ViewChild('popup') popup: Popup;
 
+  ClickButton(){
+    this.popup.options={
+    header: this.systemInput.machineName + " COMPLIANCE CHECKLIST",
+    widthProsentage: 300,
+    cancleBtnContent: "EXIT",
+    }
+    this.popup.show(this.popup.options);}
 
 
   ngOnInit() {
