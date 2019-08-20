@@ -1,6 +1,10 @@
 <div class='card mb-3 shadow button-background'>
   <div class= "popup-box">
-    <popup #popup> Last Full Scan: {{systemInput.AMStatus}}
+    <popup #popup>
+      <p *ngIf="systemInput.AMStatus; else showInvalid"> AM Version Status: Current</p>
+      <ng-template #showInvalid>
+      <p style="background-color:yellow; ">AM Version Status: Needs Update</p>
+    </ng-template>
     </popup>
   </div>
   <button (click)="ClickButton()" [ngClass]="{'btn buttonGood':systemInput.AMStatus==true,'btn buttonAlert':systemInput.AMStatus==false}">{{systemInput.hostname}}</button>
