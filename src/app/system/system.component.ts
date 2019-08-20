@@ -17,14 +17,13 @@ export class SystemComponent implements OnInit {
 
 
   constructor(
-
-    private _pciService:PciService
+    private pciService:PciService
     ) { }
 
   color: string;
   buttonText: string; 
 
-  @Input() systemInput: System;
+  @Input() systemInput: any;
   @ViewChild('popup') popup: Popup;
 
   ClickButton(){
@@ -38,7 +37,7 @@ export class SystemComponent implements OnInit {
 
   ngOnInit() {
     this.getMachineAction(this.systemInput.isInCompliance);
-    this._pciService._getPciInfo()
+    this.pciService.getPciInfo()
             .subscribe((pciInfo)=> this.pciData = pciInfo);
   }
 

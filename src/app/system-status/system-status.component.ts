@@ -1,19 +1,9 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { System } from '../Shared/system';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Ipcidata } from '../Shared/Ipcidata';
 import { map, filter, switchMap } from 'rxjs/operators';
-
-
-
-const SAMPLE_SYSTEMS = [
-  {id: 1, machineName: 'DP1-304-044', isInCompliance: false, lastUpdated: '6/7/2017'},
-  {id: 2, machineName: 'DP1-304-044', isInCompliance: true, lastUpdated: '6/7/2017'},
-  {id: 3, machineName: 'DP1-304-044', isInCompliance: true, lastUpdated: '6/7/2017'},
-  {id: 4, machineName: 'DP1-304-044', isInCompliance: true, lastUpdated: '6/7/2017'},
-
-];
+import { PciService } from '../Shared/pciservice';
 
 @Component({
   selector: 'app-system-status',
@@ -23,12 +13,12 @@ const SAMPLE_SYSTEMS = [
 
 export class SystemStatusComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pciService: PciService) { }
 
-
-  systemList: System[] = SAMPLE_SYSTEMS;
+  systemList: any;
 
   ngOnInit() {
+    this.pciService.getPciInfo().subscribe(x => this.systemList = x);
   }
 
 }

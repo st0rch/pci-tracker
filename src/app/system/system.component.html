@@ -1,6 +1,6 @@
 <div class="card mb-3 shadow button-background ">
   <div class= "popup-box ">
-    <popup #popup> Last Full Scan: {{systemInput?.lastUpdated}} </popup>
+    <popup #popup> Last Full Scan: {{systemInput.AMStatus}} </popup>
   </div>
-  <button (click)="ClickButton()" class="btn btn-default button">{{systemInput?.machineName}}</button>
+  <button (click)="ClickButton()" class="btn btn-default button">{{systemInput.hostname}}</button>
 </div>

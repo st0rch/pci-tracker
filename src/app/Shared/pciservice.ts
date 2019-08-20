@@ -4,18 +4,17 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Ipcidata } from './Ipcidata';
 import { map, filter, switchMap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 
 
 @Injectable()
 export class PciService implements OnInit {
 
-  constructor(private _http: Http) { }
+  constructor(private httpClient: HttpClient) { }
 
-
-  _getPciInfo(): Observable <Ipcidata[]> {
-    return this._http.get('http://localhost:499/api/PCImachines')
-              .map((response: Response)=> <Ipcidata[]>response.json())
+  getPciInfo(): Observable <Ipcidata[]> {
+    return this.httpClient.get<Ipcidata[]>('http://localhost:499/api/PCImachines');
   }
 
   ngOnInit() {
