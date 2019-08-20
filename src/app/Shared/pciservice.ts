@@ -14,7 +14,7 @@ export class PciService implements OnInit {
 
 
   _getPciInfo(): Observable <Ipcidata[]> {
-    return this._http.get('http://localhost:60805/api/PCImachines')
+    return this._http.get('http://localhost:499/api/PCImachines')
               .map((response: Response)=> <Ipcidata[]>response.json())
   }
 

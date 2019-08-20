@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PCIModelStoreContainer" CdmEntityContainer="PCIEntities">
+    <EntitySetMapping Name="PCIDatas">
+      <EntityTypeMapping TypeName="PCIModel.PCIData">
+        <MappingFragment StoreEntitySet="PCIData">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hostname" ColumnName="hostname" />
+          <ScalarProperty Name="AMStatus" ColumnName="AMStatus" />
+          <ScalarProperty Name="BLStatus" ColumnName="BLStatus" />
+          <ScalarProperty Name="FirewallRullStatus" ColumnName="FirewallRullStatus" />
+          <ScalarProperty Name="FirewallContentStatus" ColumnName="FirewallContentStatus" />
+          <ScalarProperty Name="SCCMStatus" ColumnName="SCCMStatus" />
+          <ScalarProperty Name="MSBaselineStatus" ColumnName="MSBaselineStatus" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AMVersionInfoes">
+      <EntityTypeMapping TypeName="PCIModel.AMVersionInfo">
+        <MappingFragment StoreEntitySet="AMVersionInfo">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="AMProductVersion" ColumnName="AMProductVersion" />
+          <ScalarProperty Name="AMEngineVersion" ColumnName="AMEngineVersion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
