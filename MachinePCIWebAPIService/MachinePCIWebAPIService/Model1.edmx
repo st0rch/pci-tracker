@@ -26,6 +26,7 @@
           <Property Name="FirewallContentStatus" Type="bit" Nullable="false" />
           <Property Name="SCCMStatus" Type="bit" Nullable="false" />
           <Property Name="MSBaselineStatus" Type="bit" Nullable="false" />
+          <Property Name="USBStatus" Type="bit" Nullable="false" />
           <Property Name="UpdatedDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PCIModelStoreContainer">
@@ -49,6 +50,7 @@
           <Property Name="SCCMStatus" Type="Boolean" Nullable="false" />
           <Property Name="MSBaselineStatus" Type="Boolean" Nullable="false" />
           <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="USBStatus" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PCIEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PCIDatas" EntityType="Self.PCIData" />
@@ -72,6 +74,7 @@
           <EntitySetMapping Name="PCIDatas">
             <EntityTypeMapping TypeName="PCIModel.PCIData">
               <MappingFragment StoreEntitySet="PCIData">
+                <ScalarProperty Name="USBStatus" ColumnName="USBStatus" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="hostname" ColumnName="hostname" />
                 <ScalarProperty Name="AMStatus" ColumnName="AMStatus" />

@@ -8,4 +8,5 @@ export interface Ipcidata {
     SCCMStatus: boolean;
     MSBaselineStatus: boolean;
     UpdatedDate: Date;
+    USBStatus: boolean;
 }

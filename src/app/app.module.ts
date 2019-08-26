@@ -10,6 +10,7 @@ import { HttpModule } from '@angular/http';
 import 'rxjs/Rx';
 import { PciService } from './Shared/pciservice';
 import {PopupModule} from 'ng2-opd-popup';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {PopupModule} from 'ng2-opd-popup';
     BrowserModule,
     PopupModule.forRoot(),
   ],
-  providers: [PciService],
+  providers: [PciService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

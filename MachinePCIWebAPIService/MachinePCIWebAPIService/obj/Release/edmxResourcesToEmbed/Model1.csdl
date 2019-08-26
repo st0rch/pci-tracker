@@ -13,6 +13,7 @@
     <Property Name="SCCMStatus" Type="Boolean" Nullable="false" />
     <Property Name="MSBaselineStatus" Type="Boolean" Nullable="false" />
     <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="USBStatus" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityContainer Name="PCIEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="PCIDatas" EntityType="Self.PCIData" />

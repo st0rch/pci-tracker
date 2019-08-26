@@ -23,5 +23,6 @@ namespace MachinePCIWebAPIService
         public bool SCCMStatus { get; set; }
         public bool MSBaselineStatus { get; set; }
         public System.DateTime UpdatedDate { get; set; }
+        public bool USBStatus { get; set; }
     }
 }

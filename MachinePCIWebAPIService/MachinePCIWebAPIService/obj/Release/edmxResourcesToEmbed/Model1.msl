@@ -4,6 +4,7 @@
     <EntitySetMapping Name="PCIDatas">
       <EntityTypeMapping TypeName="PCIModel.PCIData">
         <MappingFragment StoreEntitySet="PCIData">
+          <ScalarProperty Name="USBStatus" ColumnName="USBStatus" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="hostname" ColumnName="hostname" />
           <ScalarProperty Name="AMStatus" ColumnName="AMStatus" />

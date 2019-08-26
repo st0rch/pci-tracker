@@ -21,6 +21,7 @@
     <Property Name="FirewallContentStatus" Type="bit" Nullable="false" />
     <Property Name="SCCMStatus" Type="bit" Nullable="false" />
     <Property Name="MSBaselineStatus" Type="bit" Nullable="false" />
+    <Property Name="USBStatus" Type="bit" Nullable="false" />
     <Property Name="UpdatedDate" Type="date" Nullable="false" />
   </EntityType>
   <EntityContainer Name="PCIModelStoreContainer">
