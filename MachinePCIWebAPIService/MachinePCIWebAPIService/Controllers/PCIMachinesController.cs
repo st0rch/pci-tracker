@@ -35,7 +35,7 @@ namespace MachinePCIWebAPIService.Controllers
             var hostname = data.hostname;
             var AMStatus = data.AMStatus;
             var BLStatus = data.BLStatus;
-            var FirewallRuleStatus = data.FirewallRullStatus;
+            var FirewallRuleStatus = data.FirewallRuleStatus;
             var FirewallContentStatus = data.FirewallContentStatus;
             var SCCMStatus = data.SCCMStatus;
             var MSBaselineStatus = data.MSBaselineStatus;
