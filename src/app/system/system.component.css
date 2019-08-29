@@ -1,7 +1,7 @@
 .button-background {
     align-content: right;
 background-color: black;
-margin-left: .01px;
+margin-left: .0px;
 border-radius: 12px;
 }
 
@@ -28,48 +28,36 @@ border-radius: 12px;
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 10px 24px;
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
     font-size: 12px;
     font-weight: bolder;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     border-radius: 12px;
-  }
-
-  .buttonDateYellow {
-    background-color: yellow; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 24px;
+    display: block;            
+    width: 100%;
+    margin: 2px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-size: 12px;
-    font-weight: bolder;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    border-radius: 12px;
   }
 
   .buttonAlert {
     background-color:red; /* Green */
     border: none;
     color: white;
-    padding: 10px 24px;
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
     font-size: 12px;
     font-weight: bolder;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     border-radius: 12px;
+    display: block;            
+    width: 100%;
+    margin: 2px;
+    text-align: center;
   }
 
   .buttonDateAlert {
@@ -80,7 +68,7 @@ border-radius: 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+
     font-size: 12px;
     font-weight: bolder;
     -webkit-transition-duration: 0.4s; /* Safari */

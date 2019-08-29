@@ -11,6 +11,11 @@ import 'rxjs/Rx';
 import { PciService } from './Shared/pciservice';
 import {PopupModule} from 'ng2-opd-popup';
 import { DatePipe } from '@angular/common';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; //importing the module
+import { CardComponent } from './card/card.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {Ng2OrderModule} from 'ng2-order-pipe';
 
 @NgModule({
   declarations: [
@@ -19,12 +24,17 @@ import { DatePipe } from '@angular/common';
     SidebarComponent,
     SystemStatusComponent,
     SystemComponent,
+    CardComponent,
   ],
   imports: [
+    Ng2OrderModule,
     HttpModule,
     HttpClientModule,
     BrowserModule,
+    NgxPaginationModule,
     PopupModule.forRoot(),
+    Ng2SearchPipeModule,
+    NoopAnimationsModule
   ],
   providers: [PciService,DatePipe],
   bootstrap: [AppComponent]

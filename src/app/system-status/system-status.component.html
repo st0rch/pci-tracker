@@ -1,7 +1,13 @@
 <div class="section-container">
-  <div class="card-deck System">
-    <div *ngFor="let system of systemList">
-      <app-system [systemInput]="system"></app-system>
+  <table>
+  <div class ="container">
+      <ng-container *ngFor="let system of systemList  |  paginate: { itemsPerPage: 180, 
+        currentPage: p }; let i = index">
+        <app-system [systemInput]="system"></app-system>
+      </ng-container>  
     </div>
-  </div>
-</div>
+</table>
+    <div class="pagination justify-content-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+      </div>
+    </div>

@@ -1,4 +1,4 @@
-<div class='card mb-3 shadow button-background'>
+<div class='card mb-1 shadow button-background'>
   <div class= "popup-box">
     <popup #popup>
       <p *ngIf="systemInput.AMStatus; else showAMInvalid"> Anti-Malware Version: Current</p>
@@ -25,7 +25,7 @@
       <ng-template #showMSBaselineInvalid>
       <p style="background-color:yellow; ">Microsoft Standards: Not Met</p>
       </ng-template>
-      <p *ngIf="isValid() == true; else showDateInvalid"> Last Update: {{systemInput.UpdatedDate | date}}</p>
+      <p *ngIf="dateCheck() == true; else showDateInvalid"> Last Update: {{systemInput.UpdatedDate | date}}</p>
       <ng-template #showDateInvalid>
       <p style="background-color:yellow; ">Last Update: {{systemInput.UpdatedDate | date}}</p>
       </ng-template>

@@ -15,7 +15,14 @@ export class SystemStatusComponent implements OnInit {
 
   constructor(private pciService: PciService) { }
 
+  key: string = 'name'; //set default
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;}
+
   systemList: any;
+
 
   ngOnInit() {
     this.pciService.getPciInfo().subscribe(x => this.systemList = x);

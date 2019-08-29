@@ -42,6 +42,13 @@ export class SystemComponent implements OnInit {
     };
     this.popup.show(this.popup.options); }
 
+  dateCheck(){
+    const latest_date = this.datepipe.transform(this.systemInput.UpdatedDate, 'MM-dd-yyyy');
+    if (latest_date > this.dateMinusTwoWeeks)
+    {return true}
+    else {return false}
+  }
+
   isValid(){
     const latest_date = this.datepipe.transform(this.systemInput.UpdatedDate, 'MM-dd-yyyy');
     if (latest_date > this.dateMinusTwoWeeks
