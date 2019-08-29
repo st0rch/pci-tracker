@@ -35,10 +35,11 @@ namespace MachinePCIWebAPIService.Controllers
             var hostname = data.hostname;
             var AMStatus = data.AMStatus;
             var BLStatus = data.BLStatus;
-            var FirewallRuleStatus = data.FirewallRullStatus;
+            var FirewallRuleStatus = data.FirewallRuleStatus;
             var FirewallContentStatus = data.FirewallContentStatus;
             var SCCMStatus = data.SCCMStatus;
             var MSBaselineStatus = data.MSBaselineStatus;
+            var USBStatus = data.USBStatus;
             using (PCIEntities entities = new PCIEntities()) {
             var PCIList = entities.PCIDatas.Where(e => e.hostname == hostname).FirstOrDefault();
 
@@ -52,6 +53,8 @@ namespace MachinePCIWebAPIService.Controllers
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().FirewallContentStatus = FirewallContentStatus;
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().SCCMStatus = SCCMStatus;
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().MSBaselineStatus = MSBaselineStatus;
+                  entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().USBStatus = USBStatus;
+                  entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().UpdatedDate = data.UpdatedDate;
                   entities.SaveChanges();
                   HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Accepted, CurrentId + "Updated");
                   
@@ -66,7 +69,9 @@ namespace MachinePCIWebAPIService.Controllers
                     FirewallRullStatus = FirewallRuleStatus,
                     FirewallContentStatus = FirewallContentStatus,
                     SCCMStatus = SCCMStatus,
-                    MSBaselineStatus = MSBaselineStatus
+                    MSBaselineStatus = MSBaselineStatus,
+                    USBStatus = USBStatus,
+                    UpdatedDate = data.UpdatedDate
                   };
                   entities.PCIDatas.Add(NewPCIData);
                   entities.SaveChanges();
