@@ -49,7 +49,7 @@ namespace MachinePCIWebAPIService.Controllers
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().hostname = hostname;
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().AMStatus = AMStatus;
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().BLStatus = BLStatus;
-                  entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().FirewallRullStatus = FirewallRuleStatus;
+                  entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().FirewallRuleStatus = FirewallRuleStatus;
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().FirewallContentStatus = FirewallContentStatus;
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().SCCMStatus = SCCMStatus;
                   entities.PCIDatas.Where(e => e.id == CurrentId).FirstOrDefault().MSBaselineStatus = MSBaselineStatus;
@@ -66,7 +66,7 @@ namespace MachinePCIWebAPIService.Controllers
                     hostname = hostname,
                     AMStatus = AMStatus,
                     BLStatus = BLStatus,
-                    FirewallRullStatus = FirewallRuleStatus,
+                    FirewallRuleStatus = FirewallRuleStatus,
                     FirewallContentStatus = FirewallContentStatus,
                     SCCMStatus = SCCMStatus,
                     MSBaselineStatus = MSBaselineStatus,

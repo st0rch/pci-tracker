@@ -3,7 +3,7 @@ export interface Ipcidata {
     hostname: string;
     AMStatus: boolean;
     BLStatus: boolean;
-    FirewallRullStatus: boolean;
+    FirewallRuleStatus: boolean;
     FirewallContentStatus: boolean;
     SCCMStatus: boolean;
     MSBaselineStatus: boolean;

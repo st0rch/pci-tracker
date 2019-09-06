@@ -12,10 +12,11 @@ import { PciService } from './Shared/pciservice';
 import {PopupModule} from 'ng2-opd-popup';
 import { DatePipe } from '@angular/common';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { Ng2SearchPipeModule } from 'ng2-search-filter'; //importing the module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CardComponent } from './card/card.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {Ng2OrderModule} from 'ng2-order-pipe';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,10 @@ import {Ng2OrderModule} from 'ng2-order-pipe';
     NgxPaginationModule,
     PopupModule.forRoot(),
     Ng2SearchPipeModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    NgxSpinnerModule
   ],
-  providers: [PciService,DatePipe],
+  providers: [PciService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

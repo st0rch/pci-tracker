@@ -17,6 +17,8 @@
 
 #navbar{  
     display :flex;
+    border-bottom-style: solid;
+    border-bottom-color: black;
     justify-content: center;
     font-weight: bold;
     font-size: 20px;

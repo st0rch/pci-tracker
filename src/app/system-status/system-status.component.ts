@@ -5,6 +5,7 @@ import { Ipcidata } from '../Shared/Ipcidata';
 import { map, filter, switchMap } from 'rxjs/operators';
 import { PciService } from '../Shared/pciservice';
 
+
 @Component({
   selector: 'app-system-status',
   templateUrl: './system-status.component.html',
@@ -13,19 +14,12 @@ import { PciService } from '../Shared/pciservice';
 
 export class SystemStatusComponent implements OnInit {
 
-  constructor(private pciService: PciService) { }
-
-  key: string = 'name'; //set default
-  reverse: boolean = false;
-  sort(key){
-    this.key = key;
-    this.reverse = !this.reverse;}
-
+  constructor(private pciService: PciService) { };
+  p: number;
   systemList: any;
 
+  ngOnInit() {this.pciService.getPciInfo().subscribe(x => this.systemList = x);
 
-  ngOnInit() {
-    this.pciService.getPciInfo().subscribe(x => this.systemList = x);
+
   }
-
 }

@@ -9,7 +9,7 @@
       <ng-template #showBLInvalid>
       <p style="background-color:yellow; ">Bitlocker Status: Inactive</p>
       </ng-template>
-      <p *ngIf="systemInput.FirewallRullStatus; else showFirewallRuleInvalid"> Firewall Rules: Applied</p>
+      <p *ngIf="systemInput.FirewallRuleStatus; else showFirewallRuleInvalid"> Firewall Rules: Applied</p>
       <ng-template #showFirewallRuleInvalid>
       <p style="background-color:yellow; ">Firewall Rules: Not Applied</p>
       </ng-template>
@@ -29,7 +29,7 @@
       <ng-template #showDateInvalid>
       <p style="background-color:yellow; ">Last Update: {{systemInput.UpdatedDate | date}}</p>
       </ng-template>
-      <p *ngIf="systemInput.USBStatus; else showUSBInvalid">Removable Storage: Disabled</p>
+      <p *ngIf="systemInput.USBStatus == true; else showUSBInvalid">Removable Storage: Disabled</p>
       <ng-template #showUSBInvalid>
       <p style="background-color:yellow; ">Removable Storage: Enabled</p>
       </ng-template>

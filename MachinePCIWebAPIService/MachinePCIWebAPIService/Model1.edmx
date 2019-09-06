@@ -22,11 +22,12 @@
           <Property Name="hostname" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="AMStatus" Type="bit" Nullable="false" />
           <Property Name="BLStatus" Type="bit" Nullable="false" />
-          <Property Name="FirewallRullStatus" Type="bit" Nullable="false" />
+          <Property Name="FirewallRuleStatus" Type="bit" Nullable="false" />
           <Property Name="FirewallContentStatus" Type="bit" Nullable="false" />
           <Property Name="SCCMStatus" Type="bit" Nullable="false" />
           <Property Name="MSBaselineStatus" Type="bit" Nullable="false" />
           <Property Name="USBStatus" Type="bit" Nullable="false" />
+          <Property Name="ImageDate" Type="date" />
           <Property Name="UpdatedDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PCIModelStoreContainer">
@@ -45,12 +46,13 @@
           <Property Name="hostname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AMStatus" Type="Boolean" Nullable="false" />
           <Property Name="BLStatus" Type="Boolean" Nullable="false" />
-          <Property Name="FirewallRullStatus" Type="Boolean" Nullable="false" />
           <Property Name="FirewallContentStatus" Type="Boolean" Nullable="false" />
           <Property Name="SCCMStatus" Type="Boolean" Nullable="false" />
           <Property Name="MSBaselineStatus" Type="Boolean" Nullable="false" />
           <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="USBStatus" Type="Boolean" Nullable="false" />
+          <Property Name="FirewallRuleStatus" Type="Boolean" Nullable="false" />
+          <Property Name="ImageDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityContainer Name="PCIEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PCIDatas" EntityType="Self.PCIData" />
@@ -74,12 +76,13 @@
           <EntitySetMapping Name="PCIDatas">
             <EntityTypeMapping TypeName="PCIModel.PCIData">
               <MappingFragment StoreEntitySet="PCIData">
+                <ScalarProperty Name="ImageDate" ColumnName="ImageDate" />
+                <ScalarProperty Name="FirewallRuleStatus" ColumnName="FirewallRuleStatus" />
                 <ScalarProperty Name="USBStatus" ColumnName="USBStatus" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="hostname" ColumnName="hostname" />
                 <ScalarProperty Name="AMStatus" ColumnName="AMStatus" />
                 <ScalarProperty Name="BLStatus" ColumnName="BLStatus" />
-                <ScalarProperty Name="FirewallRullStatus" ColumnName="FirewallRullStatus" />
                 <ScalarProperty Name="FirewallContentStatus" ColumnName="FirewallContentStatus" />
                 <ScalarProperty Name="SCCMStatus" ColumnName="SCCMStatus" />
                 <ScalarProperty Name="MSBaselineStatus" ColumnName="MSBaselineStatus" />

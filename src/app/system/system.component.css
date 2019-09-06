@@ -1,6 +1,6 @@
 .button-background {
     align-content: right;
-background-color: black;
+background-color: transparent;
 margin-left: .0px;
 border-radius: 12px;
 }
@@ -35,7 +35,7 @@ border-radius: 12px;
     font-weight: bolder;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    border-radius: 12px;
+    border-radius: 1px;
     display: block;            
     width: 100%;
     margin: 2px;
@@ -43,7 +43,7 @@ border-radius: 12px;
   }
 
   .buttonAlert {
-    background-color:red; /* Green */
+    background-color:rgb(208, 3, 3); /* Green */
     border: none;
     color: white;
     padding: 10px 15px;
@@ -53,11 +53,12 @@ border-radius: 12px;
     font-weight: bolder;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    border-radius: 12px;
+    border-radius: 1px;
     display: block;            
     width: 100%;
     margin: 2px;
     text-align: center;
+
   }
 
   .buttonDateAlert {
@@ -73,7 +74,7 @@ border-radius: 12px;
     font-weight: bolder;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    border-radius: 12px;
+    border-radius: 1px;
   }
 
   .buttonDateAlert:hover {

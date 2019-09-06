@@ -18,11 +18,12 @@ namespace MachinePCIWebAPIService
         public string hostname { get; set; }
         public bool AMStatus { get; set; }
         public bool BLStatus { get; set; }
-        public bool FirewallRullStatus { get; set; }
         public bool FirewallContentStatus { get; set; }
         public bool SCCMStatus { get; set; }
         public bool MSBaselineStatus { get; set; }
         public System.DateTime UpdatedDate { get; set; }
         public bool USBStatus { get; set; }
+        public bool FirewallRuleStatus { get; set; }
+        public Nullable<System.DateTime> ImageDate { get; set; }
     }
 }
