@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { PciService } from './Shared/pciservice';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,20 @@ export class AppComponent {
 
   title = 'PCI-TRACKER';
 
-  constructor(private spinner: NgxSpinnerService) { }
+  pciData: any;
+  page = 1;
+
+  constructor(private spinner: NgxSpinnerService, private pciService: PciService) { }
 
   ngOnInit() {
     this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 5000);
-  }
+
+    this.pciService.getPciInfo()
+            .subscribe((pciInfo) => {
+              this.spinner.hide();
+              return this.pciData = pciInfo
+            });
+    }
+
 }
 

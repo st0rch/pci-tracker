@@ -1,14 +1,18 @@
+
 <ngx-spinner></ngx-spinner>
-<div class="section-container">
-  <table>
-  <div class ="container">
-      <ng-container *ngFor="let system of systemList  |  paginate: { itemsPerPage: 180, 
-        currentPage: p }; let i = index">
+
+<section class="app-container">
+
+  <div class ="card-container">
+    <ng-container *ngFor="let system of pciData  |  paginate: { itemsPerPage: 180, 
+      currentPage: p }; let i = index">
+      <div class='cardboi'>
         <app-system [systemInput]="system"></app-system>
-      </ng-container>  
-    </div>
-</table>
-    <div class="pagination justify-content-center">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls> 
       </div>
-    </div>
+    </ng-container>  
+  </div>
+
+  <div class="pagination-container">
+    <pagination-controls class='paginator' (pageChange)="p = $event"></pagination-controls> 
+  </div>
+</section>

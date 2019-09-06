@@ -1,5 +1,5 @@
 <div class='card mb-1 shadow button-background'>
-  <div class= "popup-box">
+  <!-- <div class= "popup-box">
     <popup #popup>
       <p *ngIf="systemInput.AMStatus; else showAMInvalid"> Anti-Malware Version: Current</p>
       <ng-template #showAMInvalid>
@@ -35,7 +35,7 @@
       </ng-template>
 
     </popup>
-  </div>
+  </div> -->
   <button (click)="ClickButton()" [ngClass]="{
     'btn buttonGood':isValid(),
     'btn buttonDateAlert':isValid()=='datewarning',

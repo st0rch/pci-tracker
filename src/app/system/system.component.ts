@@ -30,6 +30,7 @@ export class SystemComponent implements OnInit {
     private pciService: PciService) { }
 
   // Configuration for the popup display box that appears on button press
+
   @Input() systemInput: any;
   @ViewChild('popup') popup: Popup;
 
@@ -41,7 +42,9 @@ export class SystemComponent implements OnInit {
     cancleBtnContent: 'EXIT',
     confirmBtnContent: 'Run Script'
     };
-    this.popup.show(this.popup.options); }
+    this.popup.show(this.popup.options); 
+  
+  }
 
     // Checks update date to and highlights on popup if over two weeks old
   dateCheck() {
@@ -74,9 +77,9 @@ export class SystemComponent implements OnInit {
     }
 
   // Subscribes to observable to get the pciData information
-  ngOnInit() {
-    this.pciService.getPciInfo()
-            .subscribe((pciInfo) => this.pciData = pciInfo);
+    ngOnInit() {
+      // this.pciService.getPciInfo()
+      //       .subscribe((pciInfo) => this.pciData = pciInfo);
     }
   }
 

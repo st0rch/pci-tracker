@@ -1,12 +1,13 @@
 .button-background {
-    align-content: right;
-background-color: transparent;
-margin-left: .0px;
-border-radius: 12px;
+  align-content: right;
+  background-color: transparent;
+  margin-left: .0px;
+  border-radius: 12px;
 }
 
 .popup-box{
-    color:black; 
+  color:black;
+  z-index: 99;
 }
 
 .status{
@@ -54,7 +55,7 @@ border-radius: 12px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     border-radius: 1px;
-    display: block;            
+    /* display: block; */
     width: 100%;
     margin: 2px;
     text-align: center;

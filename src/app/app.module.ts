@@ -17,6 +17,7 @@ import { CardComponent } from './card/card.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {Ng2OrderModule} from 'ng2-order-pipe';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { SystemModalComponent } from './system-modal/system-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     SystemStatusComponent,
     SystemComponent,
     CardComponent,
+    SystemModalComponent,
   ],
   imports: [
     Ng2OrderModule,

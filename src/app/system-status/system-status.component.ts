@@ -1,9 +1,9 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, Input } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Ipcidata } from '../Shared/Ipcidata';
 import { map, filter, switchMap } from 'rxjs/operators';
-import { PciService } from '../Shared/pciservice';
+// import { PciService } from '../Shared/pciservice';
 
 
 @Component({
@@ -14,12 +14,24 @@ import { PciService } from '../Shared/pciservice';
 
 export class SystemStatusComponent implements OnInit {
 
-  constructor(private pciService: PciService) { };
+
+  @Input() pciData: any;
+
+
+  // filteredInput = null;
+  // constructor(private pciService: PciService) {};
+
   p: number;
   systemList: any;
 
-  ngOnInit() {this.pciService.getPciInfo().subscribe(x => this.systemList = x);
+  // values = '';
 
+  // onKey(event: any) {
+  //   this.values = event.target.value;
+  //   console.log(this.values)
+  // }
 
+  ngOnInit() {
+    // this.pciService.getPciInfo().subscribe(x => this.systemList = x);
   }
 }
