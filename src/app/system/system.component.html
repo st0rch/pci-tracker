@@ -1,44 +1,10 @@
-<div class='card mb-1 shadow button-background'>
-  <!-- <div class= "popup-box">
-    <popup #popup>
-      <p *ngIf="systemInput.AMStatus; else showAMInvalid"> Anti-Malware Version: Current</p>
-      <ng-template #showAMInvalid>
-      <p style="background-color:yellow; ">Anti-Malware Version: Needs Update</p>
-      </ng-template>
-      <p *ngIf="systemInput.BLStatus; else showBLInvalid">Bitlocker Status: Active</p>
-      <ng-template #showBLInvalid>
-      <p style="background-color:yellow; ">Bitlocker Status: Inactive</p>
-      </ng-template>
-      <p *ngIf="systemInput.FirewallRuleStatus; else showFirewallRuleInvalid"> Firewall Rules: Applied</p>
-      <ng-template #showFirewallRuleInvalid>
-      <p style="background-color:yellow; ">Firewall Rules: Not Applied</p>
-      </ng-template>
-      <p *ngIf="systemInput.FirewallContentStatus; else showFirewallContentInvalid"> Firewall: Enabled </p>
-      <ng-template #showFirewallContentInvalid>
-      <p style="background-color:yellow; ">Firewall Status: Disabled</p>
-      </ng-template>
-      <p *ngIf="systemInput.SCCMStatus; else showSCCMStatusInvalid"> SCCM Status: Running</p>
-      <ng-template #showSCCMStatusInvalid>
-      <p style="background-color:yellow; ">SCCM Status: Not Running</p>
-      </ng-template>
-      <p *ngIf="systemInput.MSBaselineStatus; else showMSBaselineInvalid"> Microsoft Standards: Met</p>
-      <ng-template #showMSBaselineInvalid>
-      <p style="background-color:yellow; ">Microsoft Standards: Not Met</p>
-      </ng-template>
-      <p *ngIf="dateCheck() == true; else showDateInvalid"> Last Update: {{systemInput.UpdatedDate | date}}</p>
-      <ng-template #showDateInvalid>
-      <p style="background-color:yellow; ">Last Update: {{systemInput.UpdatedDate | date}}</p>
-      </ng-template>
-      <p *ngIf="systemInput.USBStatus == true; else showUSBInvalid">Removable Storage: Disabled</p>
-      <ng-template #showUSBInvalid>
-      <p style="background-color:yellow; ">Removable Storage: Enabled</p>
-      </ng-template>
 
-    </popup>
-  </div> -->
-  <button (click)="ClickButton()" [ngClass]="{
+<div class='card shadow button-background'>
+
+  <button (click)="openDialog()" [ngClass]="{
     'btn buttonGood':isValid(),
     'btn buttonDateAlert':isValid()=='datewarning',
     'btn buttonAlert':isValid()==false
-  }">{{systemInput.hostname}}</button>
+  }">{{systemInput.hostname.slice(0,13)}}</button>
+  
 </div>

@@ -2,11 +2,10 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { System } from '../Shared/system';
 import { Ipcidata } from '../Shared/iPCIDATA';
 import { PciService } from '../Shared/pciservice';
-import {Popup} from 'ng2-opd-popup';
 import { bindCallback } from 'rxjs';
 import { DatePipe } from '@angular/common';
-
-
+import { MatDialog } from '@angular/material';
+import { MyDialogComponent } from '../my-dialog/my-dialog.component';
 
 @Component({
   selector: 'app-system',
@@ -26,36 +25,35 @@ export class SystemComponent implements OnInit {
 
   // creating a datepipe and PciService object to be used in the component in the constructor
   constructor(
+    public dialog: MatDialog,
     public datepipe: DatePipe,
-    private pciService: PciService) { }
+    private pciService: PciService,
+    ) { }
 
   // Configuration for the popup display box that appears on button press
-
+  count: number;
+  notValid: number;
   @Input() systemInput: any;
-  @ViewChild('popup') popup: Popup;
+
 
   // Button that displays popup and popup options
-  ClickButton() {
-    this.popup.options = {
-    header: this.systemInput.hostname + ' PCI CHECKLIST',
-    widthProsentage: 300,
-    cancleBtnContent: 'EXIT',
-    confirmBtnContent: 'Run Script'
-    };
-    this.popup.show(this.popup.options); 
-  
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MyDialogComponent, {
+      panelClass: 'custom-dialog-container',
+      width: '400px',
+      data: {}
+    });
+
+    (<MyDialogComponent>dialogRef.componentInstance).systemInput = this.systemInput;
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
-    // Checks update date to and highlights on popup if over two weeks old
-  dateCheck() {
-    const latestDate = this.datepipe.transform(this.systemInput.UpdatedDate, 'MM-dd-yyyy');
-    if (latestDate > this.dateMinusTwoWeeks) {
-      return true; } else {return false; }
-  }
-  // Returns value to change CSS on buttons depending on data values
   isValid() {
     const latestDate = this.datepipe.transform(this.systemInput.UpdatedDate, 'MM-dd-yyyy');
-    if (latestDate > this.dateMinusTwoWeeks
+    if (
+    latestDate >= this.dateMinusTwoWeeks
     && this.systemInput.AMStatus
     && this.systemInput.BLStatus
     && this.systemInput.FirewallRuleStatus
@@ -72,8 +70,8 @@ export class SystemComponent implements OnInit {
       && this.systemInput.SCCMStatus
       && this.systemInput.MSBaselineStatus
       && this.systemInput.USBStatus
-      ) {return 'datewarning'; } else {
-        return false; }
+      ) {return 'datewarning'; }
+      else {return false}
     }
 
   // Subscribes to observable to get the pciData information

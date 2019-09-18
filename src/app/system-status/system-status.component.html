@@ -10,6 +10,11 @@
         <app-system [systemInput]="system"></app-system>
       </div>
     </ng-container>  
+
+    <ng-container *ngFor=" let system of systemInput">
+        <app-my-dialog [systemInput] = "system"></app-my-dialog>
+      </ng-container>
+
   </div>
 
   <div class="pagination-container">

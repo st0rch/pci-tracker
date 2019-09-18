@@ -6,18 +6,20 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SystemStatusComponent } from './system-status/system-status.component';
 import { SystemComponent } from './system/system.component';
 import { HttpClientModule} from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import 'rxjs/Rx';
 import { PciService } from './Shared/pciservice';
-import {PopupModule} from 'ng2-opd-popup';
 import { DatePipe } from '@angular/common';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { CardComponent } from './card/card.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {Ng2OrderModule} from 'ng2-order-pipe';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SystemModalComponent } from './system-modal/system-modal.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { MatButtonModule, MatCardModule } from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
@@ -26,20 +28,26 @@ import { SystemModalComponent } from './system-modal/system-modal.component';
     SidebarComponent,
     SystemStatusComponent,
     SystemComponent,
-    CardComponent,
     SystemModalComponent,
+    MyDialogComponent,
+
   ],
   imports: [
+    BrowserAnimationsModule,
     Ng2OrderModule,
-    HttpModule,
     HttpClientModule,
     BrowserModule,
     NgxPaginationModule,
-    PopupModule.forRoot(),
     Ng2SearchPipeModule,
     NoopAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatDialogModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule
   ],
+exports:[SystemComponent],
+  entryComponents: [MyDialogComponent, SystemComponent],
   providers: [PciService, DatePipe],
   bootstrap: [AppComponent]
 })

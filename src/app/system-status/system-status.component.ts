@@ -1,5 +1,4 @@
 import { Component, OnInit, Injectable, Input } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Ipcidata } from '../Shared/Ipcidata';
 import { map, filter, switchMap } from 'rxjs/operators';
@@ -9,7 +8,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
 @Component({
   selector: 'app-system-status',
   templateUrl: './system-status.component.html',
-  styleUrls: ['./system-status.component.css']
+  styleUrls: ['./system-status.component.css'],
 })
 
 export class SystemStatusComponent implements OnInit {
@@ -20,7 +19,7 @@ export class SystemStatusComponent implements OnInit {
 
   // filteredInput = null;
   // constructor(private pciService: PciService) {};
-
+  systemInput: any; 
   p: number;
   systemList: any;
 

@@ -1,0 +1,19 @@
+
+.topnav {
+    overflow: hidden;
+    width:auto;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 900
+  }
+
+.displaybox-buttons{
+    align-content: right
+}
+
+.displaybox{
+    background-color: red;
+    margin-top: 0px;
+    padding: 0 0px;
+}
+
