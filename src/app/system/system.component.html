@@ -1,10 +1,10 @@
 
 <div class='card shadow button-background'>
 
-  <button (click)="openDialog()" [ngClass]="{
+  <button  (click)="openDialog()" [ngClass]="{
     'btn buttonGood':isValid(),
     'btn buttonDateAlert':isValid()=='datewarning',
     'btn buttonAlert':isValid()==false
-  }">{{systemInput.hostname.slice(0,13)}}</button>
+  }">{{systemInput.hostname.slice(0,13) | uppercase}}</button>
   
 </div>

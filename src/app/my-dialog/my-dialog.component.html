@@ -1,6 +1,6 @@
 
 <div>
-<div class="topnav"> {{systemInput.hostname}} </div>
+<div class="topnav" style="border-bottom-style: inset"> {{systemInput.hostname}} </div>
       <p *ngIf="systemInput.AMStatus; else showAMInvalid"> Anti-Malware Version: Current</p>
       <ng-template #showAMInvalid>
       <p style="background-color:yellow; ">Anti-Malware Version: Needs Update</p>
@@ -42,9 +42,9 @@
       </ng-template>
 
 
-      <div mat-dialog-actions>
-        <button  mat-raised-button (click)="close()">EXIT </button>
-        <button  mat-raised-button (click)="deleteEntry(systemInput.id)">DELETE MACHINE </button>
+      <div mat-dialog-actions style="border-top-style:outset">
+        <button  mat-button (click)="close()">EXIT </button>
+        <button  mat-button (click)="deleteEntry(systemInput.id)">REMOVE MACHINE </button>
       </div>
 
   

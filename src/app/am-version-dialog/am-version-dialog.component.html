@@ -1,0 +1,32 @@
+
+<header style="border-bottom-style:inset">
+<h5 style="text-align: center;margin-bottom: 10px; border-bottom: black ">Valid AM Versions</h5>
+</header>
+<div style="margin-top: 10px; margin-bottom: 10px">
+<ul>
+<li *ngFor="let version of AMVersion">
+{{version.AMProductVersion}} &nbsp; &nbsp; <button mat-button (click)="deleteEntry(version.id)">Delete Version</button>
+</li>
+</ul>
+<form [formGroup]="versionForm" class="form-horizontal" (ngSubmit)="onSubmit()">
+    <div class = "panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title" style="text-align: center">Add Version</h3>
+        </div>
+        <div class="panel body">
+            <div class="form-group">
+                <label class="control-label" for="AMEngineVersion">AMEngineVersion</label>
+                <input id= "AMEngineVersion" formControlName="AMEngineVersion" type="text" class="form-control">
+                <label class="control-label" for="AMProductVersion">AMProductVersion</label>
+                <input class="control-label" id= "AMProductVersion"  formControlName="AMProductVersion" type="text" class="form-control">
+                <label for="active"> active </label>
+                <input class="control-label" id= "active"  formControlName="active" type="text" class="form-control">
+                <button mat-button type="submit">Add Version</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<div style="border-top-style:outset">
+    <button  mat-button (click)="close()">EXIT</button>
+</div>

@@ -1,8 +1,24 @@
-<p>
-  <span class="logo pci-logo">
-  PCI
-  </span>
-  <span class="logo logo-left">
-    LEVEL 1 COMPLIANCE
-  </span>
-</p>
+<nav class='nav-parent'>    
+  
+  <button mat-button (click)="openDialog()"> AM Version</button>
+
+
+  <app-pie-chart *ngIf="colorCounts" [colorCounts]="colorCounts"></app-pie-chart>
+    
+  <div class='nav-child'>
+      <span class="logo">
+    <div class="logo-background">
+    PCI 
+
+
+    </div>
+    
+    
+    &nbsp; LEVEL 1 COMPLIANCE
+    </span>
+  </div>
+</nav>
+
+
+
+

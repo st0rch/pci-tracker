@@ -1,19 +1,14 @@
 .navbar{  
-    display: flex;
     border-bottom-style: solid;
     border-bottom-color: black;
-    justify-content: center;
     font-weight: bold;
     font-size: 20px;
     background-color: #161A1E;
     box-shadow: 0 3px 6px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.25);
+    height: 200px
 }
 
-.custom-dialog-container .mat-dialog-container {
-    margin: 0px;
-    padding: 0px;
-    background-color: #4CAF50
-}
+  
 /* #sidebar{
     height: 100vh;
     padding-top: 80px;
@@ -29,4 +24,5 @@
 #navbarFont{
     color: #161A1E
 } */
+
 

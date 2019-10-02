@@ -19,8 +19,9 @@ export class MyDialogComponent implements OnInit {
               public dialogRef: MatDialogRef<MyDialogComponent>,
               private pciService: PciService) { }
 
-@Input() systemInput :any;
-  close() {
+@Input() systemInput:any;
+  
+close() {
     this.dialogRef.close();
   }
 

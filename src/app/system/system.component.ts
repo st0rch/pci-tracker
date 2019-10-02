@@ -1,10 +1,8 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { System } from '../Shared/system';
 import { Ipcidata } from '../Shared/iPCIDATA';
-import { PciService } from '../Shared/pciservice';
-import { bindCallback } from 'rxjs';
 import { DatePipe } from '@angular/common';
-import { MatDialog } from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+
 import { MyDialogComponent } from '../my-dialog/my-dialog.component';
 
 @Component({
@@ -27,20 +25,20 @@ export class SystemComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     public datepipe: DatePipe,
-    private pciService: PciService,
     ) { }
 
   // Configuration for the popup display box that appears on button press
   count: number;
   notValid: number;
   @Input() systemInput: any;
-
+  inCompliance = 0;
 
   // Button that displays popup and popup options
   openDialog(): void {
-    const dialogRef = this.dialog.open(MyDialogComponent, {
+    let dialogRef = this.dialog.open(MyDialogComponent, {
       panelClass: 'custom-dialog-container',
       width: '400px',
+
       data: {}
     });
 
@@ -48,6 +46,10 @@ export class SystemComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+  addNumber(){
+    this.inCompliance += 1;
+    console.log(this.inCompliance)
   }
 
   isValid() {
@@ -61,7 +63,7 @@ export class SystemComponent implements OnInit {
     && this.systemInput.SCCMStatus
     && this.systemInput.MSBaselineStatus
     && this.systemInput.USBStatus
-    ) {return true; } else if (
+    ) { return true; } else if (
       latestDate > this.dateMinusMonth && latestDate < this.dateMinusTwoWeeks
       && this.systemInput.AMStatus
       && this.systemInput.BLStatus

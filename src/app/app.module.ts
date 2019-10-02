@@ -8,17 +8,19 @@ import { SystemComponent } from './system/system.component';
 import { HttpClientModule} from '@angular/common/http';
 import 'rxjs/Rx';
 import { PciService } from './Shared/pciservice';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {Ng2OrderModule} from 'ng2-order-pipe';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { SystemModalComponent } from './system-modal/system-modal.component';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule} from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import { MatButtonModule, MatCardModule } from '@angular/material';
-
+import { AmVersionDialogComponent } from './am-version-dialog/am-version-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 
 @NgModule({
@@ -28,8 +30,9 @@ import { MatButtonModule, MatCardModule } from '@angular/material';
     SidebarComponent,
     SystemStatusComponent,
     SystemComponent,
-    SystemModalComponent,
     MyDialogComponent,
+    AmVersionDialogComponent,
+    PieChartComponent,
 
   ],
   imports: [
@@ -44,11 +47,14 @@ import { MatButtonModule, MatCardModule } from '@angular/material';
     MatDialogModule,
     HttpClientModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ChartsModule,
   ],
 exports:[SystemComponent],
-  entryComponents: [MyDialogComponent, SystemComponent],
-  providers: [PciService, DatePipe],
+  entryComponents: [MyDialogComponent, AmVersionDialogComponent, SystemComponent],
+  providers: [PciService, DatePipe, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
