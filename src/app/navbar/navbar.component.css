@@ -29,6 +29,17 @@ border-radius: 70px;
     
 }
 
+.nav-child1{
+    margin-top: 1%;
+    flex: 0 1 auto;
+    display:flex;
+    flex:1;
+    justify-content: center;
+    position: absolute;             
+    left: 15%;
+    transform: translateX(-50%);
+}
+
 .nav-child {
     margin-top: 1%;
     flex: 0 1 auto;

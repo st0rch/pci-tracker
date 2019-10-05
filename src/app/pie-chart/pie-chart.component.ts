@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Colors } from '../Shared/Colors';
+import { ChartsModule } from 'ng2-charts';
+import { MultiDataSet, Label } from 'ng2-charts';
+import { ChartType } from 'chart.js';
+
 
 @Component({
   selector: 'app-pie-chart',
@@ -12,30 +16,35 @@ export class PieChartComponent implements OnInit {
 @Input() colorCounts: Colors;
 green: number;
 red: number;
+doughnutChartData: any;
+
+  public doughnutChartLabels: Label[] = ['Compliant', 'Non-Compliant'];
+  public doughnutChartType: ChartType = 'doughnut';
+  public lineChartLegend: boolean = false;
+
+  public chartColors: Array<any> =     [{ backgroundColor: ["#009933", "#cc0000"] }];
 
 
 
-  chart = [];
-  public pieChartLabels = ['In Compliance', 'Out Of Compliance'];
-  public pieChartData = [];
-  public pieChartType = 'doughnut';
-  public colors = [{backgroundColor:["limegreen", "red"],hoverBackgroundColor:"lightblue", borderColor:"white"}];
-  public lineChartLegend:boolean = false;
-  public border = {borderColor: "black"};
 
-
-  calculateValid(){
-    var percent = this.red / this.green * 100;
-    return percent;
-  }
   constructor() { }
 
   ngOnInit() {
     this.red = this.colorCounts.red;
     this.green = this.colorCounts.green;
     console.log(this.green);
-    this.pieChartData = [this.green, this.red]
+    this.doughnutChartData = [
+      [this.green, this.red],
+    ];
 
   }
+      // events
+    public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
+      console.log(event, active);
+    }
 
+
+    public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
+      console.log(event, active);
+    }
 }

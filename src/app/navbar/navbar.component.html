@@ -1,9 +1,13 @@
 <nav class='nav-parent'>    
   
   <button mat-button (click)="openDialog()"> AM Version</button>
-
+  
 
   <app-pie-chart *ngIf="colorCounts" [colorCounts]="colorCounts"></app-pie-chart>
+ <span class= 'nav-child1' style="color: limegreen; font-weight: bolder">
+  {{calculatePercent() | number:'.0-0'  }}%    <span style="color:white"> Compliant</span>
+</span>
+
     
   <div class='nav-child'>
       <span class="logo">
@@ -16,6 +20,7 @@
     
     &nbsp; LEVEL 1 COMPLIANCE
     </span>
+    
   </div>
 </nav>
 

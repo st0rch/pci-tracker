@@ -21,6 +21,8 @@ import { AmVersionDialogComponent } from './am-version-dialog/am-version-dialog.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { FilterPipe } from './filter.pipe';
+
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     MyDialogComponent,
     AmVersionDialogComponent,
     PieChartComponent,
+    FilterPipe,
 
   ],
   imports: [
@@ -52,7 +55,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     ReactiveFormsModule,
     ChartsModule,
   ],
-exports:[SystemComponent],
+exports: [SystemComponent],
   entryComponents: [MyDialogComponent, AmVersionDialogComponent, SystemComponent],
   providers: [PciService, DatePipe, DecimalPipe],
   bootstrap: [AppComponent]

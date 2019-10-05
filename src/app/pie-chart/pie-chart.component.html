@@ -1,13 +1,18 @@
-<div style="display: block">
-    <canvas baseChart
-        width="160" 
-        height="66"
-        [labels] = "pieChartLabels"
-        [data]="pieChartData"
-        [chartType]="pieChartType"
-        [colors]="colors"
-        [legend]="lineChartLegend">
+<div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart 
+        height="68"
+        width="150"
+         [legend]="lineChartLegend"
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"
+          [colors]="chartColors">
         </canvas>
-        
+      </div>
+    </div>
   </div>
  

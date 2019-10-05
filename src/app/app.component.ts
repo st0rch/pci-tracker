@@ -12,7 +12,6 @@ import { Colors } from './Shared/Colors';
   styleUrls: ['./app.component.css']
 })
 
-//var Howl = require('howler');
 
 export class AppComponent {
 

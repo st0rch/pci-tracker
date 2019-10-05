@@ -47,10 +47,7 @@ export class SystemComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-  addNumber(){
-    this.inCompliance += 1;
-    console.log(this.inCompliance)
-  }
+
 
   isValid() {
     const latestDate = this.datepipe.transform(this.systemInput.UpdatedDate, 'MM-dd-yyyy');
@@ -76,10 +73,9 @@ export class SystemComponent implements OnInit {
       else {return false}
     }
 
-  // Subscribes to observable to get the pciData information
+
     ngOnInit() {
-      // this.pciService.getPciInfo()
-      //       .subscribe((pciInfo) => this.pciData = pciInfo);
+
     }
   }
 

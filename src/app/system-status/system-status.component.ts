@@ -2,7 +2,9 @@ import { Component, OnInit, Injectable, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ipcidata } from '../Shared/Ipcidata';
 import { map, filter, switchMap } from 'rxjs/operators';
-// import { PciService } from '../Shared/pciservice';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 
 @Component({
@@ -17,20 +19,13 @@ export class SystemStatusComponent implements OnInit {
   @Input() pciData: any;
 
 
-  // filteredInput = null;
-  // constructor(private pciService: PciService) {};
-  systemInput: any; 
+
+constructor() {}
+  searchText;
   p: number;
-  systemList: any;
-
-  // values = '';
-
-  // onKey(event: any) {
-  //   this.values = event.target.value;
-  //   console.log(this.values)
-  // }
+  filteredValues : any;
 
   ngOnInit() {
-    // this.pciService.getPciInfo().subscribe(x => this.systemList = x);
+
   }
 }

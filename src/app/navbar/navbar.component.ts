@@ -24,7 +24,11 @@ export class NavbarComponent implements OnInit {
   @Input('colorCounts') colorCounts: Colors;
 
 
-
+  calculatePercent() {
+    var math = this.green / this.red;
+    var math2 = 100 - math;
+    return math2
+  }
 
   openDialog(): void {
     let dialogRef = this.dialog.open(AmVersionDialogComponent, {

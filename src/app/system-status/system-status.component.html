@@ -4,19 +4,16 @@
 <section class="app-container">
 
   <div class ="card-container">
-    <ng-container *ngFor="let system of pciData  |  paginate: { itemsPerPage: 180, 
-      currentPage: p }; let i = index">
+    <ng-container *ngFor="let system of pciData | paginate: { itemsPerPage: 180, 
+      currentPage: p }; let i = index ">
       <div class='cardboi'>
         <app-system [systemInput]="system"></app-system>
+
       </div>
     </ng-container>  
-
-    <ng-container *ngFor=" let system of systemInput">
-        <app-my-dialog [systemInput] = "system"></app-my-dialog>
-      </ng-container>
   </div>
-
   <div class="pagination-container">
     <pagination-controls class='paginator' (pageChange)="p = $event"></pagination-controls> 
   </div>
+  <input ng-model="searchText" placeholder="enter search term here" onchange="filterResults()">
 </section>
