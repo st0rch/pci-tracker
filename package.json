@@ -28,7 +28,7 @@
     "chartjs-plugin-labels": "^1.1.0",
     "core-js": "^2.5.4",
     "howler": "^2.1.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-charts": "^2.3.0",
     "ng2-opd-popup": "^1.1.21",
     "ng2-order-pipe": "^0.1.5",
